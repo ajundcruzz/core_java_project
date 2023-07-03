@@ -12,7 +12,7 @@ public class UserValidator {
 		if(user == null) {
 			throw new Exception("invalid user input");
 		}
-		if(user.getEmail() == null ||"".equals(user.getEmail().trim())){
+		if(user.getEmail() == null || "".equals(user.getEmail().trim())){
 			throw new Exception("Email can not null or empty");
 		}
 		if (user.getPassword() == null || user.getPassword().isBlank()) {

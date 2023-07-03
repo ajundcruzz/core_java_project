@@ -53,7 +53,7 @@ public class TestCreateUser {
 			userService.create(null);
 		});
 		 
-		 String exceptedMessage = "Email can not be null";
+		 String exceptedMessage = "Email can not null or empty";
 		 String actualMessageString = exception.getMessage();
 		 
 		 assertTrue(exceptedMessage.equals(actualMessageString));
@@ -75,7 +75,7 @@ public class TestCreateUser {
 			userService.create(null);
 		});
 		 
-		 String exceptedMessage = "Email can not be Empty";
+		 String exceptedMessage = "Email can not null or empty";
 		 String actualMessageString = exception.getMessage();
 		 
 		 assertTrue(exceptedMessage.equals(actualMessageString));
