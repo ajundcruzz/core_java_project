@@ -2,6 +2,7 @@ package in.arulajun.fitness.service;
 
 import in.arulajun.fitness.dao.UserDAO;
 import in.arulajun.fitness.model.User;
+import in.arulajun.validation.UserValidator;
 
 public class UserService {
 
@@ -15,34 +16,13 @@ public class UserService {
 
 			System.out.println(userList[i]);
 		}
-
 		return userList;
 	}
 
-	public void create() {
-
-		User newUser = new User();
-		newUser.setId(5555);
-		newUser.setFirstName("Arul");
-		newUser.setLastName("Ajun");
-		newUser.setEmail("ajundcruzz55@gmail.com");
-		newUser.setPassword("Ajunajun55");
-		newUser.setActive(true);
-
+	public void create(User newUser)throws Exception {
+		UserValidator.validate(newUser);
 		UserDAO userDao = new UserDAO();
 		userDao.create(newUser);
-
-		User newUser2 = new User();
-		newUser2.setId(333);
-		newUser2.setFirstName("Arul");
-		newUser2.setLastName("Abilash");
-		newUser2.setEmail("abilash03@gmail.com");
-		newUser2.setPassword("Abi03");
-		newUser2.setActive(true);
-
-		UserDAO userDao2 = new UserDAO();
-		userDao.create(newUser2);
-
 	}
 
 	public void update() {
