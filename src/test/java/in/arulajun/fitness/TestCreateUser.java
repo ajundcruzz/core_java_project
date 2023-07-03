@@ -31,7 +31,7 @@ public class TestCreateUser {
 			 Exception exception = assertThrows(Exception.class,()->{
 				userService.create(null);
 			});
-			 String exceptedMessage = "Invalid User Input";
+			 String exceptedMessage = "invalid user input";
 			 String actualMessageString = exception.getMessage();
 			 
 			 assertTrue(exceptedMessage.equals(actualMessageString));
@@ -50,7 +50,7 @@ public class TestCreateUser {
 		
 
 		 Exception exception = assertThrows(Exception.class,()->{
-			userService.create(null);
+			userService.create(newUser);
 		});
 		 
 		 String exceptedMessage = "Email can not null or empty";
@@ -72,7 +72,7 @@ public class TestCreateUser {
 		
 
 		 Exception exception = assertThrows(Exception.class,()->{
-			userService.create(null);
+			userService.create(newUser);
 		});
 		 
 		 String exceptedMessage = "Email can not null or empty";
