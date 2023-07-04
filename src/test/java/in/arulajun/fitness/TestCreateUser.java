@@ -155,7 +155,7 @@ public class TestCreateUser {
 			userService.create(newUser);
 		});
 
-		String exceptedMessage = "Password cannot be null or empty";
+		String exceptedMessage = "Name cannot be null or empty";
 		String actualMessage = exception.getMessage();
 
 		assertTrue(exceptedMessage.equals(actualMessage));
@@ -179,7 +179,7 @@ public class TestCreateUser {
 			userService.create(newUser);
 		});
 
-		String exceptedMessage = "Password cannot be null or empty";
+		String exceptedMessage = "Name cannot be null or empty";
 		String actualMessage = exception.getMessage();
 
 		assertTrue(exceptedMessage.equals(actualMessage));
