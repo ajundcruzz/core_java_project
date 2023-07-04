@@ -31,7 +31,7 @@ public class TaskService {
 		
 		updatedTask.setId(5555);
 		updatedTask.setName("Move front");
-		updatedTask.setDueDate("2023/12/12");
+		updatedTask.setDueDate("2023-12-12");
 		updatedTask.setActive(true);
 		
 		TaskDAO taskDao = new TaskDAO();
@@ -45,7 +45,7 @@ public class TaskService {
 		
 		deleteTask.setId(5555);
 		deleteTask.setName("Move front");
-		deleteTask.setDueDate("2023/12/12");
+		deleteTask.setDueDate("2023-12-12");
 		deleteTask.setActive(true);
 		
 		TaskDAO taskDao = new TaskDAO();
@@ -59,7 +59,7 @@ public class TaskService {
 		
 		findById.setId(5555);
 		findById.setName("Move front");
-		findById.setDueDate("2023/12/12");
+		findById.setDueDate("2023-12-12");
 		findById.setActive(true);
 		
 		TaskDAO taskDao = new TaskDAO();
