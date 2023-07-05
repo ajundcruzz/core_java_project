@@ -1,7 +1,8 @@
 package in.arulajun.fitness;
 
-import in.arulajun.fitness.dao.UserDAO;
+import in.arulajun.fitness.model.Task;
 import in.arulajun.fitness.model.User;
+import in.arulajun.fitness.service.TaskService;
 import in.arulajun.fitness.service.UserService;
 
 public class App {
@@ -22,6 +23,21 @@ public class App {
 
 			userService.create(newUser);
 			userService.getAll();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		try {
+			TaskService taskService = new TaskService();
+
+			Task newTask = new Task();
+			newTask.setId(5555);
+			newTask.setName("Move front");
+			newTask.setActive(true);
+
+			taskService.create(newTask);
+			taskService.getAll();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

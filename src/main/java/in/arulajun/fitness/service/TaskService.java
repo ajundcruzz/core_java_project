@@ -1,6 +1,9 @@
 package in.arulajun.fitness.service;
 
+import java.time.format.DateTimeParseException;
+
 import in.arulajun.fitness.dao.TaskDAO;
+import in.arulajun.fitness.exception.ValidationException;
 import in.arulajun.fitness.model.Task;
 import in.arulajun.validation.TaskValidator;
 
@@ -19,7 +22,12 @@ public class TaskService {
 		return taskList;
 	}
 
-	public void create(Task newTask)throws Exception {
+	public void create(Task newTask) throws Exception {
+		try {
+			TaskValidator.validate(newTask);
+		} catch (DateTimeParseException e) {
+			throw new ValidationException("Invalid date format or Invalid Date");
+		}
 		TaskValidator.validate(newTask);
 		TaskDAO taskDao = new TaskDAO();
 		taskDao.create(newTask);

@@ -13,13 +13,13 @@ import in.arulajun.fitness.service.TaskService;
 public class TestCreateTask {
 
 	@Test
-	public void testCreateUserWithValidData() {
+	public void testCreateTaskWithValidData() {
 
 		TaskService taskService = new TaskService();
 		Task newTask = new Task();
 		newTask.setId(5555);
 		newTask.setName("Move front");
-		newTask.setDueDate("2023/12/12");
+		newTask.setDueDate("2023-12-12");
 		newTask.setActive(true);
 		assertDoesNotThrow(() -> {
 			taskService.create(newTask);
@@ -27,7 +27,7 @@ public class TestCreateTask {
 	}
 	
 	@Test
-	public void testCreateUserWithInvalidData() {
+	public void testCreateTaskWithInvalidData() {
 
 		TaskService taskService = new TaskService();
 		
@@ -41,7 +41,7 @@ public class TestCreateTask {
 	}
 	
 	@Test
-	public void testUserNameEmpty() {
+	public void testTaskNameEmpty() {
 
 		TaskService taskService = new TaskService();
 		
@@ -63,7 +63,7 @@ public class TestCreateTask {
 	}
 	
 	@Test
-	public void testUserNameNull() {
+	public void testTaskNameNull() {
 
 		TaskService taskService = new TaskService();
 		
@@ -121,7 +121,7 @@ public class TestCreateTask {
 		    @Test
 			public void testCreateUserWithDueDatePassedDate() {
 		    	TaskService taskService = new TaskService();
-		    	Task newTask = new Task();
+		    	Task newTask = new Task();	
 		 		newTask.setId(5555);
 		 		newTask.setDueDate("2023-06-26");
 		 		newTask.setName("Practice");
@@ -135,22 +135,40 @@ public class TestCreateTask {
 				
 				assertTrue(expectedMessage.equals(actualMessage));
 			}
+		    
 		    @Test
-			public void testCreateUserWithDueDateParseDate() {
+			public void testCreateTaskWithDueDateParseDate() {
 		    	TaskService taskService = new TaskService();
 		    	Task newTask = new Task();
-		 		newTask.setId(5555);
-		 		newTask.setDueDate("2023-12-12");
+		 		newTask.setId(1);
+		 		newTask.setDueDate("26-07-2023");
 		 		newTask.setName("Practice");
 		 		newTask.setActive(true);
 				
 				Exception exception = assertThrows(Exception.class,()->{
 					taskService.create(newTask);
 				});
-				String expectedMessage = "Invalid date format. Expected format: yyyy-MM-dd";
+				String expectedMessage = "Invalid date format or Invalid Date";
+				String actualMessage = exception.getMessage();
+				
+				assertTrue(expectedMessage.equals(actualMessage));
+		    }
+		    @Test
+			public void testCreateTaskWithDueDateInvalidDate() {
+		    	TaskService taskService = new TaskService();
+		    	Task newTask = new Task();
+		 		newTask.setId(1);
+		 		newTask.setDueDate("2023-02-31");
+		 		newTask.setName("Practice");
+		 		newTask.setActive(true);
+				
+				Exception exception = assertThrows(Exception.class,()->{
+					taskService.create(newTask);
+				});
+				String expectedMessage = "Invalid date format or Invalid Date";
 				String actualMessage = exception.getMessage();
 				
 				assertTrue(expectedMessage.equals(actualMessage));
 			}
-
+		    
 }

@@ -37,8 +37,7 @@ public class TaskDAO {
 			}
 			if (Task.getId() == updatedTask.getId()) {
 
-				Task.setFirstName(updatedTask.getFirstName());
-				Task.setLastName(updatedTask.getLastName());
+				Task.setName(updatedTask.getName());
 				Task.setDueDate(null);
 
 				break;
