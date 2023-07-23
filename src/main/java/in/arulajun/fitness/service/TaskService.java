@@ -1,6 +1,7 @@
 package in.arulajun.fitness.service;
 
 import java.time.format.DateTimeParseException;
+import java.util.Set;
 
 import in.arulajun.fitness.dao.TaskDAO;
 import in.arulajun.fitness.exception.ValidationException;
@@ -9,16 +10,16 @@ import in.arulajun.validation.TaskValidator;
 
 public class TaskService {
 	
-	public Task[] getAll() {
+	public Set<Task> getAll() {
 
 		TaskDAO taskDao = new TaskDAO();
 
-		Task[] taskList = taskDao.findAll();
+		Set<Task> taskList = taskDao.findAll();
 
-		for (int i = 0; i < taskList.length; i++) {
-
-			System.out.println(taskList[i]);
+		for (Task task : taskList) {
+			System.out.println(task);
 		}
+		
 		return taskList;
 	}
 

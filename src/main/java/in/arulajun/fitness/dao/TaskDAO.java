@@ -1,79 +1,62 @@
 package in.arulajun.fitness.dao;
 
+import java.util.Set;
+
+import in.arulajun.fitness.interfaces.TaskInterface;
 import in.arulajun.fitness.model.Task;
 
-public class TaskDAO {
-	
-	public Task[] findAll() {
-		Task[] taskList = TaskList.listOfTasks;
-		return taskList;
-	}
+public class TaskDAO implements TaskInterface{
 
-	/**
-	 * 
-	 * @param newUser
-	 */
-
+	@Override
 	public void create(Task newTask) {
-
-		Task[] arr = TaskList.listOfTasks;
-
-		for (int i = 0; i < arr.length; i++) {
-			Task Task = arr[i];
-			if (Task == null) {
-				arr[i] = newTask;
-				break;
-			}
-		}
+		Set<Task> taskList = TaskList.listOfTasks;
+		taskList.add(newTask);
+		
 	}
 
-	public void update(Task updatedTask) {
-		Task[] array = TaskList.listOfTasks;
-
-		for (int i = 0; i < array.length; i++) {
-			Task Task = array[i];
-			if (Task == null) {
-				continue;
-			}
-			if (Task.getId() == updatedTask.getId()) {
-
-				Task.setName(updatedTask.getName());
-				Task.setDueDate(null);
-
-				break;
-			}
-		}
-	}
-
-	public void delete(int id) {
-		Task[] array = TaskList.listOfTasks;
-		for (int i = 0; i < array.length; i++) {
-			Task Task = array[i];
-			if (Task == null) {
-				continue;
-			}
-			if (Task.getId() == id) {
-				array[i].setActive(false);
-				break;
-			}
-		}
-	}
-
-	// Find by id
-	public Task findById(int userId) {
-		Task[] arr = TaskList.listOfTasks;
+	@Override
+	public Task findById(int id) {
+		Set<Task> taskList = TaskList.listOfTasks;
 		Task taskMatch = null;
-		for (int i = 0; i < arr.length; i++) {
-			Task Task = arr[i];
-			if (Task == null) {
-				continue;
-			}
-			if (Task.getId() == userId) {
-				taskMatch = Task;
+
+		for (Task task : taskList) {
+			if (task.getId() == id) {
+				taskMatch = task;
 				break;
 			}
 		}
 		return taskMatch;
 	}
 
+	@Override
+	public void update(Task updatedTask) {
+		Set<Task> taskList = TaskList.listOfTasks;
+		for (Task task : taskList) {
+			if (task.getId() == updatedTask.getId()) {
+				task.setName(updatedTask.getName());
+				task.setDueDate(updatedTask.getDueDate());
+				break;
+			}
+		}
+	}
+
+	@Override
+	public Set<Task> findAll() {
+		Set<Task> userTask = TaskList.listOfTasks;
+		return userTask;
+	}
+
+	@Override
+	public void delete(int TaskId) {
+		Set<Task> taskList = TaskList.listOfTasks;
+		for (Task task : taskList) {
+			if (task == null) {
+				continue;
+			}
+			if (task.getId() == TaskId) {
+				task.setActive(false);
+				break;
+			}
+		}
+	}
 }
