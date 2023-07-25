@@ -1,4 +1,4 @@
-package util;
+package in.arulajun.fitness.util;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -6,23 +6,23 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import io.github.cdimascio.dotenv.Dotenv;
+
 public class ConnectionUtil {
 
 	public static Connection getConnection() {
+		
+		Dotenv env = Dotenv.load();
+		
+		String url = env.get("DATABASE_HOST");
+		String username = env.get("DATABASE_USERNAME");
+		String password = env.get("DATABASE_PASSWORD");
+		
 		Connection connection = null;
-		String url = null;
-		String userName = null;
-		String password = null;
 
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			 connection = DriverManager.getConnection(
-			  "jdbc:mysql://aws.connect.psdb.cloud/ajundcruzz?sslMode=VERIFY_IDENTITY",
-			  "1odp3volh92nlq36sp6n",
-			  "pscale_pw_sUHFy0t8EI918y9xgQklVHft7y8VdHw7XL57Jc0Cuoa");
-
-//			Class.forName("com.mysql.cj.jdbc.Driver");
-//			connection = DriverManager.getConnection(url, userName, password);
+			 connection = DriverManager.getConnection(url, username, password);
 
 		} catch (Exception e) {
 			e.printStackTrace();

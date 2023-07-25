@@ -9,7 +9,8 @@ import java.util.Set;
 
 import in.arulajun.fitness.interfaces.UserInterface;
 import in.arulajun.fitness.model.User;
-import util.ConnectionUtil;
+import in.arulajun.fitness.util.ConnectionUtil;
+
 
 public class UserDAO implements UserInterface {
 	@Override
@@ -84,31 +85,52 @@ public class UserDAO implements UserInterface {
 	}
 
 	@Override
-	public void update(User updatedUser) {
-		Set<User> userList = UserList.listOfUsers;
-		for (User user : userList) {
-			if (user.getId() == updatedUser.getId()) {
-				user.setFirstName(updatedUser.getFirstName());
-				user.setLastName(updatedUser.getLastName());
-				user.setPassword(updatedUser.getPassword());
-
-				break;
-			}
+	public void update(int id,User updateUser) {
+		
+		Connection con = null;
+		PreparedStatement ps = null;
+		try {
+			String query = "UPDATE users SET first_name =?, last_name=?  WHERE is_active = 1 AND id =?";
+			
+			con = ConnectionUtil.getConnection();
+			ps = con.prepareStatement(query);
+			ps.setString(1, updateUser.getFirstName());
+			ps.setString(2, updateUser.getLastName());
+			
+			ps.setInt(3, id);
+			
+			ps.executeUpdate();
+			System.out.println("User has been successfullly updated.");
+		}catch(SQLException e) {
+			e.printStackTrace();
+			System.out.println(e.getMessage());
+			throw new RuntimeException(e);
+		}finally {
+			ConnectionUtil.close(con, ps);
 		}
-
-	}
-
+			
+		
+		}
+	
 	@Override
-	public void delete(int userId) {
-		Set<User> userList = UserList.listOfUsers;
-		for (User user : userList) {
-			if (user == null) {
-				continue;
-			}
-			if (user.getId() == userId) {
-				user.setActive(false);
-				break;
-			}
+	public void delete(int userId) throws RuntimeException {
+		Connection con = null;
+		PreparedStatement ps = null;
+		try {
+			String query = "UPDATE users SET is_active = false WHERE is_active = 1 AND id = ?";
+			
+			con = ConnectionUtil.getConnection();
+			ps = con.prepareStatement(query);
+			ps.setInt(1, userId);
+			
+			ps.executeUpdate();
+			System.out.println("User has been successfullly deleted.");
+		}catch(SQLException e) {
+			e.printStackTrace();
+			System.out.println(e.getMessage());
+			throw new RuntimeException(e);
+		}finally {
+			ConnectionUtil.close(con, ps);
 		}
 	}
 

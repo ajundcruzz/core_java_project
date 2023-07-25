@@ -24,6 +24,22 @@ public class TestGetAllUser {
 		
 		System.out.print(user);
 	}
+	@Test
+	public void testDelete() {
+		UserService userService = new UserService();
+		User newUser = new User();
+		
+		userService.delete(6);
+	}
+	@Test
+	public void updateById() {
+		UserService userService = new UserService();
+		User newUser = new User();
+		
+		newUser.setFirstName("Ajun");
+		newUser.setLastName("Arul");
+		userService.update(4, newUser);
+	}
 	
 
 }

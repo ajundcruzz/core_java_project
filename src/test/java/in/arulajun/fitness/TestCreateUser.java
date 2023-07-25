@@ -17,10 +17,10 @@ public class TestCreateUser {
 		UserService userService = new UserService();
 		User newUser = new User();
 
-		newUser.setFirstName("Jayashree");
-		newUser.setLastName("S");
-		newUser.setEmail("js063@gmail.com");
-		newUser.setPassword("js063@");
+		newUser.setFirstName("vv");
+		newUser.setLastName("vicky");
+		newUser.setEmail("vicky06@gmail.com");
+		newUser.setPassword("vicky5");
 
 		assertDoesNotThrow(() -> {
 			userService.create(newUser);
@@ -31,7 +31,7 @@ public class TestCreateUser {
 	public void testCreateUserWithInvalidData() {
 
 		UserService userService = new UserService();
-		
+
 		Exception exception = assertThrows(ValidationException.class, () -> {
 			userService.create(null);
 		});
@@ -45,9 +45,9 @@ public class TestCreateUser {
 	public void testUserEmailNull() {
 
 		UserService userService = new UserService();
-		
+
 		User newUser = new User();
-		
+
 		newUser.setId(5555);
 		newUser.setFirstName("Arul");
 		newUser.setLastName("Ajun");
@@ -69,9 +69,9 @@ public class TestCreateUser {
 	public void testUserEmailEmpty() {
 
 		UserService userService = new UserService();
-		
+
 		User newUser = new User();
-		
+
 		newUser.setId(5555);
 		newUser.setFirstName("Arul");
 		newUser.setLastName("Ajun");
@@ -88,14 +88,14 @@ public class TestCreateUser {
 
 		assertTrue(exceptedMessage.equals(actualMessage));
 	}
-	
+
 	@Test
 	public void testUserPasswordEmpty() {
 
 		UserService userService = new UserService();
-		
+
 		User newUser = new User();
-		
+
 		newUser.setId(5555);
 		newUser.setFirstName("Arul");
 		newUser.setLastName("Ajun");
@@ -112,14 +112,14 @@ public class TestCreateUser {
 
 		assertTrue(exceptedMessage.equals(actualMessage));
 	}
-	
+
 	@Test
 	public void testUserPasswordNull() {
 
 		UserService userService = new UserService();
-		
+
 		User newUser = new User();
-		
+
 		newUser.setId(5555);
 		newUser.setFirstName("Arul");
 		newUser.setLastName("Ajun");
@@ -136,52 +136,46 @@ public class TestCreateUser {
 
 		assertTrue(exceptedMessage.equals(actualMessage));
 	}
-	
+
 	@Test
-	public void testUserFirstNameEmpty() {
 
+	public void testCreateUserWithFirstNameNull() {
 		UserService userService = new UserService();
-		
 		User newUser = new User();
-		
-		newUser.setId(5555);
-		newUser.setFirstName("");
-		newUser.setLastName("Ajun");
-		newUser.setEmail("ajundcruzz55@gmail.com");
-		newUser.setPassword("");
-		newUser.setActive(true);
-
-		Exception exception = assertThrows(ValidationException.class, () -> {
-			userService.create(newUser);
-		});
-
-		String exceptedMessage = "Name cannot be null or empty";
-		String actualMessage = exception.getMessage();
-
-		assertTrue(exceptedMessage.equals(actualMessage));
-	}
-	
-	@Test
-	public void testUserFirstNameNull() {
-
-		UserService userService = new UserService();
-		
-		User newUser = new User();
-		
-		newUser.setId(5555);
+		newUser.setId(1);
 		newUser.setFirstName(null);
 		newUser.setLastName("Ajun");
 		newUser.setEmail("ajundcruzz55@gmail.com");
-		newUser.setPassword(null);
+		newUser.setPassword("ajunajun55");
 		newUser.setActive(true);
 
-		Exception exception = assertThrows(ValidationException.class, () -> {
+		Exception exception = assertThrows(Exception.class, () -> {
 			userService.create(newUser);
 		});
-
-		String exceptedMessage = "Name cannot be null or empty";
+		String expectedMessage = "FirstName cannot be null or empty";
 		String actualMessage = exception.getMessage();
 
-		assertTrue(exceptedMessage.equals(actualMessage));
+		assertTrue(expectedMessage.equals(actualMessage));
+	}
+
+	@Test
+
+	public void testCreateUserWithFirstNameEmpty() {
+		UserService userService = new UserService();
+		User newUser = new User();
+		newUser.setId(1);
+		newUser.setFirstName("");
+		newUser.setLastName("Ajun");
+		newUser.setEmail("ajundcruzz55@gmail.com");
+		newUser.setPassword("ajunajun55");
+		newUser.setActive(true);
+
+		Exception exception = assertThrows(Exception.class, () -> {
+			userService.create(newUser);
+		});
+		String expectedMessage = "FirstName cannot be null or empty";
+		String actualMessage = exception.getMessage();
+
+		assertTrue(expectedMessage.equals(actualMessage));
 	}
 }

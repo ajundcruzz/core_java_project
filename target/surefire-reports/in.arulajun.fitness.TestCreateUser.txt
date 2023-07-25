@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: in.arulajun.fitness.TestCreateUser
 -------------------------------------------------------------------------------
-Tests run: 8, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.003 s <<< FAILURE! - in in.arulajun.fitness.TestCreateUser
-in.arulajun.fitness.TestCreateUser.testUserFirstNameEmpty()  Time elapsed: 0.002 s  <<< FAILURE!
+Tests run: 8, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 2.661 s <<< FAILURE! - in in.arulajun.fitness.TestCreateUser
+in.arulajun.fitness.TestCreateUser.testUserFirstNameEmpty()  Time elapsed: 0.013 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
 	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
 	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:40)

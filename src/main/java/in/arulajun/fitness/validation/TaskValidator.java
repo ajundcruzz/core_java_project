@@ -1,4 +1,4 @@
-package in.arulajun.validation;
+package in.arulajun.fitness.validation;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -6,7 +6,7 @@ import java.time.format.ResolverStyle;
 
 import in.arulajun.fitness.exception.ValidationException;
 import in.arulajun.fitness.model.Task;
-import util.StringUtil;
+import in.arulajun.fitness.util.StringUtil;
 
 public class TaskValidator {
 	

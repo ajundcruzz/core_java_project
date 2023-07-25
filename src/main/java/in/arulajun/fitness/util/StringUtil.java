@@ -1,4 +1,4 @@
-package util;
+package in.arulajun.fitness.util;
 
 import in.arulajun.fitness.exception.ValidationException;
 

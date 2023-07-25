@@ -1,8 +1,8 @@
-package in.arulajun.validation;
+package in.arulajun.fitness.validation;
 
 import in.arulajun.fitness.exception.ValidationException;
 import in.arulajun.fitness.model.User;
-import util.StringUtil;
+import in.arulajun.fitness.util.StringUtil;
 
 public class UserValidator {
 

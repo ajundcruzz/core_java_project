@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="in.arulajun.fitness.TestCreateUser" time="0.003" tests="8" errors="0" skipped="0" failures="2">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="in.arulajun.fitness.TestCreateUser" time="2.661" tests="8" errors="0" skipped="0" failures="2">
   <properties>
     <property name="java.specification.version" value="17"/>
     <property name="sun.cpu.isalist" value="amd64"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
-    <property name="java.class.path" value="C:\Software\Eclipse_IDE_Workspace\fitness\target\test-classes;C:\Software\Eclipse_IDE_Workspace\fitness\target\classes;C:\Users\ArulAjunArulraj\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.8.2\junit-jupiter-api-5.8.2.jar;C:\Users\ArulAjunArulraj\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\ArulAjunArulraj\.m2\repository\org\junit\platform\junit-platform-commons\1.8.2\junit-platform-commons-1.8.2.jar;C:\Users\ArulAjunArulraj\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\ArulAjunArulraj\.m2\repository\mysql\mysql-connector-java\8.0.28\mysql-connector-java-8.0.28.jar;C:\Users\ArulAjunArulraj\.m2\repository\com\google\protobuf\protobuf-java\3.11.4\protobuf-java-3.11.4.jar;"/>
+    <property name="java.class.path" value="C:\Software\Eclipse_IDE_Workspace\fitness\target\test-classes;C:\Software\Eclipse_IDE_Workspace\fitness\target\classes;C:\Users\ArulAjunArulraj\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.8.2\junit-jupiter-api-5.8.2.jar;C:\Users\ArulAjunArulraj\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\ArulAjunArulraj\.m2\repository\org\junit\platform\junit-platform-commons\1.8.2\junit-platform-commons-1.8.2.jar;C:\Users\ArulAjunArulraj\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\ArulAjunArulraj\.m2\repository\mysql\mysql-connector-java\8.0.28\mysql-connector-java-8.0.28.jar;C:\Users\ArulAjunArulraj\.m2\repository\com\google\protobuf\protobuf-java\3.11.4\protobuf-java-3.11.4.jar;C:\Users\ArulAjunArulraj\.m2\repository\io\github\cdimascio\java-dotenv\5.2.2\java-dotenv-5.2.2.jar;C:\Users\ArulAjunArulraj\.m2\repository\org\jetbrains\kotlin\kotlin-stdlib\1.4.0\kotlin-stdlib-1.4.0.jar;C:\Users\ArulAjunArulraj\.m2\repository\org\jetbrains\kotlin\kotlin-stdlib-common\1.4.0\kotlin-stdlib-common-1.4.0.jar;C:\Users\ArulAjunArulraj\.m2\repository\org\jetbrains\annotations\13.0\annotations-13.0.jar;"/>
     <property name="java.vm.vendor" value="Eclipse Adoptium"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="user.variant" value=""/>
@@ -15,9 +15,9 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="IN"/>
     <property name="sun.boot.library.path" value="C:\Software\eclipse\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.7.v20230425-1502\jre\bin"/>
-    <property name="sun.java.command" value="C:\Users\ARULAJ~1\AppData\Local\Temp\surefire12270314245428204205\surefirebooter5526655274368400885.jar C:\Users\ArulAjunArulraj\AppData\Local\Temp\surefire12270314245428204205 2023-07-24T10-28-18_632-jvmRun1 surefire4489959558006303956tmp surefire_04548849164975076333tmp"/>
+    <property name="sun.java.command" value="C:\Users\ARULAJ~1\AppData\Local\Temp\surefire13927245849829844212\surefirebooter8427838317092581578.jar C:\Users\ArulAjunArulraj\AppData\Local\Temp\surefire13927245849829844212 2023-07-25T12-16-36_194-jvmRun1 surefire2464711299422673191tmp surefire_012554270789592820392tmp"/>
     <property name="jdk.debug" value="release"/>
-    <property name="surefire.test.class.path" value="C:\Software\Eclipse_IDE_Workspace\fitness\target\test-classes;C:\Software\Eclipse_IDE_Workspace\fitness\target\classes;C:\Users\ArulAjunArulraj\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.8.2\junit-jupiter-api-5.8.2.jar;C:\Users\ArulAjunArulraj\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\ArulAjunArulraj\.m2\repository\org\junit\platform\junit-platform-commons\1.8.2\junit-platform-commons-1.8.2.jar;C:\Users\ArulAjunArulraj\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\ArulAjunArulraj\.m2\repository\mysql\mysql-connector-java\8.0.28\mysql-connector-java-8.0.28.jar;C:\Users\ArulAjunArulraj\.m2\repository\com\google\protobuf\protobuf-java\3.11.4\protobuf-java-3.11.4.jar;"/>
+    <property name="surefire.test.class.path" value="C:\Software\Eclipse_IDE_Workspace\fitness\target\test-classes;C:\Software\Eclipse_IDE_Workspace\fitness\target\classes;C:\Users\ArulAjunArulraj\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.8.2\junit-jupiter-api-5.8.2.jar;C:\Users\ArulAjunArulraj\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\ArulAjunArulraj\.m2\repository\org\junit\platform\junit-platform-commons\1.8.2\junit-platform-commons-1.8.2.jar;C:\Users\ArulAjunArulraj\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\ArulAjunArulraj\.m2\repository\mysql\mysql-connector-java\8.0.28\mysql-connector-java-8.0.28.jar;C:\Users\ArulAjunArulraj\.m2\repository\com\google\protobuf\protobuf-java\3.11.4\protobuf-java-3.11.4.jar;C:\Users\ArulAjunArulraj\.m2\repository\io\github\cdimascio\java-dotenv\5.2.2\java-dotenv-5.2.2.jar;C:\Users\ArulAjunArulraj\.m2\repository\org\jetbrains\kotlin\kotlin-stdlib\1.4.0\kotlin-stdlib-1.4.0.jar;C:\Users\ArulAjunArulraj\.m2\repository\org\jetbrains\kotlin\kotlin-stdlib-common\1.4.0\kotlin-stdlib-common-1.4.0.jar;C:\Users\ArulAjunArulraj\.m2\repository\org\jetbrains\annotations\13.0\annotations-13.0.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="C:\Users\ArulAjunArulraj"/>
     <property name="user.language" value="en"/>
@@ -31,7 +31,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\ARULAJ~1\AppData\Local\Temp\surefire12270314245428204205\surefirebooter5526655274368400885.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\ARULAJ~1\AppData\Local\Temp\surefire13927245849829844212\surefirebooter8427838317092581578.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="17.0.7+7"/>
@@ -58,11 +58,13 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="61.0"/>
   </properties>
-  <testcase name="in.arulajun.fitness.TestCreateUser.testUserEmailNull" classname="in.arulajun.fitness.TestCreateUser" time="0"/>
   <testcase name="in.arulajun.fitness.TestCreateUser.testUserEmailEmpty" classname="in.arulajun.fitness.TestCreateUser" time="0"/>
-  <testcase name="in.arulajun.fitness.TestCreateUser.testCreateUserWithInvalidData" classname="in.arulajun.fitness.TestCreateUser" time="0"/>
-  <testcase name="in.arulajun.fitness.TestCreateUser.testUserPasswordNull" classname="in.arulajun.fitness.TestCreateUser" time="0"/>
-  <testcase name="in.arulajun.fitness.TestCreateUser.testUserFirstNameEmpty" classname="in.arulajun.fitness.TestCreateUser" time="0.002">
+  <testcase name="in.arulajun.fitness.TestCreateUser.testUserEmailNull" classname="in.arulajun.fitness.TestCreateUser" time="0"/>
+  <testcase name="in.arulajun.fitness.TestCreateUser.testCreateUserWithValidData" classname="in.arulajun.fitness.TestCreateUser" time="2.642"/>
+  <testcase name="in.arulajun.fitness.TestCreateUser.testCreateUserWithInvalidData" classname="in.arulajun.fitness.TestCreateUser" time="0.002"/>
+  <testcase name="in.arulajun.fitness.TestCreateUser.testUserPasswordEmpty" classname="in.arulajun.fitness.TestCreateUser" time="0.001"/>
+  <testcase name="in.arulajun.fitness.TestCreateUser.testUserPasswordNull" classname="in.arulajun.fitness.TestCreateUser" time="0.001"/>
+  <testcase name="in.arulajun.fitness.TestCreateUser.testUserFirstNameEmpty" classname="in.arulajun.fitness.TestCreateUser" time="0.013">
     <failure message="expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
 	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
 	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:40)
@@ -80,6 +82,4 @@
 	at in.arulajun.fitness.TestCreateUser.testUserFirstNameNull(TestCreateUser.java:185)
 ]]></failure>
   </testcase>
-  <testcase name="in.arulajun.fitness.TestCreateUser.testCreateUserWithValidData" classname="in.arulajun.fitness.TestCreateUser" time="0"/>
-  <testcase name="in.arulajun.fitness.TestCreateUser.testUserPasswordEmpty" classname="in.arulajun.fitness.TestCreateUser" time="0"/>
 </testsuite>

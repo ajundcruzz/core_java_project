@@ -49,7 +49,7 @@ public class TestCreateTask {
 		
 		newTask.setId(5555);
 		newTask.setName("");
-		newTask.setDueDate("2023/12/12");
+		newTask.setDueDate("2023-12-12");
 		newTask.setActive(true);
 
 		Exception exception = assertThrows(ValidationException.class, () -> {
@@ -71,7 +71,7 @@ public class TestCreateTask {
 		
 		newTask.setId(5555);
 		newTask.setName(null);
-		newTask.setDueDate("2023/12/12");
+		newTask.setDueDate("2023-12-12");
 		newTask.setActive(true);
 
 		Exception exception = assertThrows(ValidationException.class, () -> {
@@ -140,8 +140,7 @@ public class TestCreateTask {
 			public void testCreateTaskWithDueDateParseDate() {
 		    	TaskService taskService = new TaskService();
 		    	Task newTask = new Task();
-		 		newTask.setId(1);
-		 		newTask.setDueDate("26-07-2023");
+		 		newTask.setDueDate("10-08-2023");
 		 		newTask.setName("Practice");
 		 		newTask.setActive(true);
 				

@@ -6,23 +6,17 @@ import java.util.Set;
 import in.arulajun.fitness.dao.TaskDAO;
 import in.arulajun.fitness.exception.ValidationException;
 import in.arulajun.fitness.model.Task;
-import in.arulajun.validation.TaskValidator;
+import in.arulajun.fitness.validation.TaskValidator;
 
 public class TaskService {
-	
 	public Set<Task> getAll() {
-
 		TaskDAO taskDao = new TaskDAO();
-
 		Set<Task> taskList = taskDao.findAll();
-
 		for (Task task : taskList) {
 			System.out.println(task);
 		}
-		
 		return taskList;
 	}
-
 	public void create(Task newTask) throws Exception {
 		try {
 			TaskValidator.validate(newTask);
@@ -33,48 +27,20 @@ public class TaskService {
 		TaskDAO taskDao = new TaskDAO();
 		taskDao.create(newTask);
 	}
-
-	public void update() {
-
-		Task updatedTask = new Task();
-		
-		updatedTask.setId(5555);
-		updatedTask.setName("Move front");
-		updatedTask.setDueDate("2023-12-12");
-		updatedTask.setActive(true);
-		
+	public void update(int id, Task updateTask) throws Exception {
+		TaskValidator.validate(updateTask);
 		TaskDAO taskDao = new TaskDAO();
-		taskDao.update(updatedTask);
-
+		taskDao.update(id, updateTask);
 	}
 	
-	public void delete() {
-
-		Task deleteTask = new Task();
-		
-		deleteTask.setId(5555);
-		deleteTask.setName("Move front");
-		deleteTask.setDueDate("2023-12-12");
-		deleteTask.setActive(true);
-		
-		TaskDAO taskDao = new TaskDAO();
-		taskDao.update(deleteTask);
-
-	}
 	
-	public void findById() {
-
-		Task findById = new Task();
-		
-		findById.setId(5555);
-		findById.setName("Move front");
-		findById.setDueDate("2023-12-12");
-		findById.setActive(true);
-		
+	public void delete(int taskId) {
 		TaskDAO taskDao = new TaskDAO();
-		taskDao.update(findById);
-
+		taskDao.delete(taskId);
 	}
-
-
+	public Task findById(int taskId) {
+		TaskDAO taskDao = new TaskDAO();
+		Task task = taskDao.findById(taskId);
+		return task;
+	}
 }
