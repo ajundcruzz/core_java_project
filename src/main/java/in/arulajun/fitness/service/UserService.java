@@ -59,19 +59,11 @@ public class UserService {
 
 	}
 	
-	public void findById() {
-
-		User findById = new User();
-		
-		findById.setId(5555);
-		findById.setFirstName("Arul");
-		findById.setLastName("Ajun");
-		findById.setEmail("ajundcruzz55@gmail.com");
-		findById.setPassword("Ajunajun55");
-		findById.setActive(true);
+	public User findById(int newId) {
 		
 		UserDAO userDao = new UserDAO();
-		userDao.update(findById);
+
+		return userDao.findById(1);
 
 	}
 
